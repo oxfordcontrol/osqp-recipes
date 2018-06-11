@@ -24,13 +24,19 @@ fi
 fi
 
 
-# Test Python interface
-# ---------------------------------------------------
+# Anaconda
+cd ${TRAVIS_BUILD_DIR}/conda_recipe
 
-# Install Python interface
-cd ${TRAVIS_BUILD_DIR}
-python setup.py install
+echo "Creating conda package..."
+conda build --python ${PYTHON_VERSION} osqp --output-folder conda-bld/
 
-# Test OSQP Python
-cd ${TRAVIS_BUILD_DIR}
-python -m pytest
+# # Test Python interface
+# # ---------------------------------------------------
+#
+# # Install Python interface
+# cd ${TRAVIS_BUILD_DIR}
+# python setup.py install
+#
+# # Test OSQP Python
+# cd ${TRAVIS_BUILD_DIR}
+# python -m pytest
