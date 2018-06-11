@@ -24,8 +24,8 @@ init:
 install:
   - "%APPVEYOR_BUILD_FOLDER%\\ci\\appveyor\\install.cmd"
 
-test_script:
-  - "%APPVEYOR_BUILD_FOLDER%\\ci\\appveyor\\script.cmd"
+# test_script:
+#   - "%APPVEYOR_BUILD_FOLDER%\\ci\\appveyor\\script.cmd"
 
 deploy_script:
   - "%APPVEYOR_BUILD_FOLDER%\\ci\\appveyor\\deploy.cmd"

@@ -25,6 +25,10 @@ test:
   # Python imports
   imports:
     - osqp
+  requires:
+    - pytest
+  commands:
+    - python -m pytest
 
 about:
   home: http://osqp.readthedocs.io/
