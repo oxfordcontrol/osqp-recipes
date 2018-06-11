@@ -28,7 +28,7 @@ test:
   requires:
     - pytest
   commands:
-    - python -m pytest
+    - python -m pytest --pyargs osqp
 
 about:
   home: http://osqp.readthedocs.io/
