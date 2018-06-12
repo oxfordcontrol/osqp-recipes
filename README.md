@@ -1,7 +1,7 @@
 # OSQP Conda Recipes builder
 
 [![Build Status](https://travis-ci.org/oxfordcontrol/osqp-recipes.svg?branch=master)](https://travis-ci.org/oxfordcontrol/osqp-recipes)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/bstellato/osqp-recipes?branch=master&svg=true)](https://ci.appveyor.com/project/bstellato/osqp-recipes)
+[![Build status](https://ci.appveyor.com/api/projects/status/2a9tm8w94te1u9iy/branch/master?svg=true)](https://ci.appveyor.com/project/bstellato/osqp-recipes/branch/master)
 
 This repository builds conda recipes and uploads them automatically to anaconda.
 
