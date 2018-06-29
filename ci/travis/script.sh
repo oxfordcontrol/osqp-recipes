@@ -2,7 +2,8 @@
 set -ev
 
 # Anaconda
-cd ${TRAVIS_BUILD_DIR}/conda_recipe
+source ${DEPS_DIR}/miniconda/bin/activate
 
 echo "Creating conda package..."
+cd ${TRAVIS_BUILD_DIR}/conda_recipe
 conda build --python ${PYTHON_VERSION} osqp --output-folder conda-bld/
