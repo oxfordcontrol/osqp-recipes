@@ -12,7 +12,15 @@ IF "%PLATFORM%"=="x86" (
 )
 
 call %MINICONDA_PATH%\Scripts\activate
-conda install conda conda-build --yes
-if errorlevel 1 exit /b 1
+call conda config --set auto_update_conda false
+call conda install conda conda-build --yes
+
+:: Fix the 64-bit, Python 2.7 case
+IF "%PLATFORM%"=="x64" (
+	IF "%PYTHON_VERSION%"=="2.7" (
+		call conda create -n vs2008 -c conda-forge vs2008_express_vc_python_patch --yes
+		call %MINICONDA_PATH%\envs\vs2008\Scripts\setup_x64.bat
+	)
+)
 
 @echo off
