@@ -1,12 +1,9 @@
 # Not a .NET project. We build it in the install script
 build: false
 
-# Skip 32-bit builds for now until OSQP PR#74 is merged
-# and is included in the osqp_source submodule
-#   https://github.com/oxfordcontrol/osqp/pull/74
 platform:
   - x64
-#  - x86
+  - x86
 
 environment:
   ANACONDA_TOKEN:

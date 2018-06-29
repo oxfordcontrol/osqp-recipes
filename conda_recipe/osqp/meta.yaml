@@ -12,8 +12,8 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/oxfordcontrol/osqp-python.git
-  git_rev: v{{ version }}
+  git_url: https://github.com/mcg1969/osqp-python.git
+  git_rev: v{{ version }}-conda
 
 build:
   number: 1
