@@ -1,37 +1,53 @@
+{% set version = "0.3.1" %}
+
+# Note for macOS: make sure to follow the instructions here to
+# obtain the proper macOS SDK, and to set CONDA_BUILD_SYSROOT:
+#   https://conda.io/docs/user-guide/tasks/build-packages/compiler-tools.html#macos-sdk
+# I recommend putting the conda_build_config.yaml file described
+# there in your home directory, so that it applies to all of your
+# conda recipes.
+
 package:
   name: osqp
-  version: "0.3.1"
+  version: {{ version }}
 
 source:
   git_url: https://github.com/oxfordcontrol/osqp-python.git
-  git_rev: v0.3.1
+  git_rev: v{{ version }}
 
+build:
+  number: 1
+  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
-  build:
-    - python
+  host:
+    - python {{ python }}
+    - numpy {{ numpy }}
     - setuptools
-    - future
-    - numpy >=1.7
-    - scipy >=0.13.2
-
+  build:
+    - {{ compiler('c') }}
+    - cmake
   run:
     - python
-    - future
-    - numpy >=1.7
+    - {{ pin_compatible('numpy') }}
     - scipy >=0.13.2
+    - future
 
 test:
-  # Python imports
-  imports:
-    - osqp
   requires:
     - pytest
+    - cmake
+  imports:
+    - osqp
+    - osqppurepy
   commands:
-    - python -m pytest --pyargs osqp
+    - python -m pytest --pyargs osqp.tests
 
 about:
   home: https://osqp.org
-  license: Apache 2.0
+  license: Apache, Version 2.0
+  license_family: Apache
   license_file: LICENSE
-  summary: 'OSQP: The Operator Splitting QP Solver'
+  summary: 'Python interface for OSQP: the Operator Splitting QP Solver.'
+  doc_url: https://osqp.org
+  dev_url: https://github.com/oxfordcontrol/osqp-python
