@@ -11,10 +11,10 @@ IF "%PLATFORM%"=="x86" (
 	set MINICONDA_PATH=%MINICONDA%-%PLATFORM%
 )
 
-call $MINICONDA_PATH%\activate
+call %MINICONDA_PATH%\Scripts\activate
 conda config --set always_yes yes --set changeps1 no
 conda config --set auto_update_conda false
-conda update conda conda-build
+conda install conda conda-build
 if errorlevel 1 exit /b 1
 
 @echo off
