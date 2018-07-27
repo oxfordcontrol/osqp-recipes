@@ -1,10 +1,6 @@
 # Not a .NET project. We build it in the install script
 build: false
 
-platform:
-  - x64
-  - x86
-
 environment:
   ANACONDA_TOKEN:
     secure: H1vdxUBNWGzvvbIyuuVByqh4zHV/VO2GI090QaQgG8En49Jks4N6yOGe6+m7cZEH
@@ -12,9 +8,17 @@ environment:
   CMAKE_PROJECT: MinGW Makefiles
   matrix:
     - PYTHON_VERSION: 2.7
+      platform: x64
+    - PYTHON_VERSION: 2.7
+      platform: x86
     - PYTHON_VERSION: 3.5
+      platform: x64
+    - PYTHON_VERSION: 3.5
+      platform: x86
     - PYTHON_VERSION: 3.6
-    - PYTHON_VERSION: 3.7
+      platform: x64
+    - PYTHON_VERSION: 3.6
+      platform: x86
 
 
 init:
