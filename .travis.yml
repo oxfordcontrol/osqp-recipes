@@ -30,7 +30,7 @@ install:
   - conda info -a
 
 script:
-  - conda build conda_recipe/osqp --python=$PYTHON_VERSION
+  - conda build conda_recipe/osqp --python=$PYTHON_VERSION --output-folder conda-bld
 
 deploy:
   # Deploy on tags
