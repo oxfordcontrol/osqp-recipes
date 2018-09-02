@@ -1,4 +1,4 @@
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 # Note for macOS: make sure to follow the instructions here to
 # obtain the proper macOS SDK, and to set CONDA_BUILD_SYSROOT:
