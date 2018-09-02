@@ -3,6 +3,7 @@ language: C
 os:
   - linux
   - osx
+osx_image: xcode6.4
 
 sudo: required
 
