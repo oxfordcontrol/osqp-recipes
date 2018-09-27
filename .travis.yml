@@ -17,7 +17,7 @@ env:
     - PYTHON_VERSION=3.6
     - PYTHON_VERSION=3.7
 
-install: 
+install:
   - if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
         wget http://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
     else
@@ -35,8 +35,6 @@ script:
 deploy:
   # Deploy on tags
   - provider: script
-    script:
-      - conda install anaconda-client
-      - anaconda -t $ANACONDA_TOKEN upload conda-bld/**/*.tar.bz2 --user oxfordcontrol --force
+    script: conda install anaconda-client; anaconda -t $ANACONDA_TOKEN upload conda-bld/**/*.tar.bz2 --user oxfordcontrol --force
     skip_cleanup: true
 
