@@ -7,18 +7,13 @@ This repository builds conda recipes and uploads them automatically to anaconda.
 
 ## Release number
 
-To change a release number you need to edit *both* `package/version` and `source/git_rev` in the file `conda_recipe/osqp/meta.yaml` to match the same release number.
-For example
+To change a release number you need to edit the file `conda_recipe/osqp/meta.yaml` at the line
 
 ```yaml
-package:
-  ...
-  version: "0.3.1"
-
-source:
-  ...
-  git_rev: v0.3.1
+{% set version = "0.5.0" %}
 ```
+
+to set the right version number.
 
 
 ## Triggering a build
